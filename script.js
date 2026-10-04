@@ -25,6 +25,7 @@ taskForm.addEventListener("submit", function (event) {
 
   taskForm.reset();
   renderTasks();
+  
 });
 
 // Show all tasks on the page
@@ -68,7 +69,9 @@ function renderTasks() {
     li.appendChild(desc);
     li.appendChild(actions);
     taskList.appendChild(li);
+    
   });
+  applySearch();
 }
 
 // Mark a task completed or pending
@@ -88,3 +91,17 @@ function deleteTask(id) {
   });
   renderTasks();
 }
+
+const searchInput = document.getElementById("searchInput");
+
+function applySearch() {
+  const query = searchInput.value.toLowerCase().trim();
+  const items = document.querySelectorAll("#taskList li");
+
+  items.forEach(function (item) {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(query) ? "" : "none";
+  });
+}
+
+searchInput.addEventListener("input", applySearch);
