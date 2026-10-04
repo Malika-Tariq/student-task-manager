@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Task Manager</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="container">
     <h1>Student Task Manager</h1>
@@ -19,10 +21,14 @@
 
       <button type="submit" id="addBtn" class="btn">Add Task</button>
     </form>
-
+    <div class="search-box">
+      <label for="searchInput">Search Tasks</label>
+      <input type="search" id="searchInput" placeholder="Search by title or description">
+    </div>
     <ul id="taskList" class="task-list"></ul>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
